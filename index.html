@@ -2,24 +2,32 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ফয়জুন্নেছা ইসলামিয়া মহিলা মাদ্রাসা</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#f2f5f2}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f0f5f0;
+}
+
 header{
-background:linear-gradient(rgba(0,90,40,.8),rgba(0,90,40,.8)),
-url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80');
+background:linear-gradient(rgba(0,80,40,.8),rgba(0,80,40,.8)),
+url('https://images.unsplash.com/photo-1519817650390-64a93db511aa?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
+background-position:center;
 color:white;
 text-align:center;
-padding:60px 20px;
+padding:80px 20px;
 }
+
 nav{
 background:#006400;
 padding:10px;
 text-align:center;
 }
+
 nav button{
 padding:10px 15px;
 margin:4px;
@@ -27,6 +35,7 @@ border:none;
 border-radius:5px;
 cursor:pointer;
 }
+
 .page{
 display:none;
 padding:20px;
@@ -34,11 +43,17 @@ background:white;
 margin:15px;
 border-radius:10px;
 }
+
+.active{
+display:block;
+}
+
 input,select{
 width:100%;
 padding:10px;
-margin:6px 0;
+margin:5px 0;
 }
+
 .submit{
 background:#006400;
 color:white;
@@ -46,9 +61,23 @@ border:none;
 padding:10px;
 width:100%;
 }
-</style>
-</head>
 
+.card{
+background:#f7f7f7;
+padding:15px;
+border-radius:10px;
+margin:10px 0;
+}
+</style>
+
+<script>
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+document.getElementById(id).style.display='block';
+}
+</script>
+
+</head>
 <body>
 
 <header>
@@ -56,6 +85,7 @@ width:100%;
 <p>মধুখালী, ফরিদপুর</p>
 <p>প্রতিষ্ঠাতা পরিচালক: মাওলানা শামসুল হক</p>
 <p>📞 ০১৭২৫৩০৪৭১৪</p>
+<p>📧 mehumahmud@gmail.com</p>
 </header>
 
 <nav>
@@ -63,35 +93,45 @@ width:100%;
 <button onclick="showPage('register')">রেজিস্ট্রেশন</button>
 <button onclick="showPage('login')">লগইন</button>
 <button onclick="showPage('admission')">ভর্তি</button>
+<button onclick="showPage('notice')">নোটিশ</button>
+<button onclick="showPage('result')">রেজাল্ট</button>
 <button onclick="showPage('payment')">পেমেন্ট</button>
 </nav>
 
-<div id="home" class="page" style="display:block">
+<div id="home" class="page active">
 <h2>স্বাগতম</h2>
-<p>মক্তব, নাজেরা ও জামাত বিভাগে ভর্তি চলছে।</p>
+
+<div class="card">📚 মক্তব বিভাগ</div>
+<div class="card">📖 নাজেরা বিভাগ</div>
+
+<div class="card">
+🎓 জামাত বিভাগ<br>
+ইবতেদায়ী, মিজান, নাহবেমীর, কুদুরী,
+শরহে বেকায়া, হেদায়া, মিশকাত
+</div>
 </div>
 
 <div id="register" class="page">
-<h2>রেজিস্ট্রেশন</h2>
-<input id="regMobile" placeholder="মোবাইল">
-<input id="regPass" type="password" placeholder="পাসওয়ার্ড">
-<button class="submit" onclick="registerUser()">রেজিস্ট্রেশন করুন</button>
+<h2>👤 রেজিস্ট্রেশন</h2>
+<input type="text" placeholder="নাম">
+<input type="text" placeholder="মোবাইল">
+<input type="password" placeholder="পাসওয়ার্ড">
+<button class="submit">রেজিস্ট্রেশন করুন</button>
 </div>
 
 <div id="login" class="page">
-<h2>লগইন</h2>
-<input id="loginMobile" placeholder="মোবাইল">
-<input id="loginPass" type="password" placeholder="পাসওয়ার্ড">
-<button class="submit" onclick="loginUser()">লগইন করুন</button>
-<p id="loginMsg"></p>
+<h2>🔐 লগইন</h2>
+<input type="text" placeholder="মোবাইল">
+<input type="password" placeholder="পাসওয়ার্ড">
+<button class="submit">লগইন করুন</button>
 </div>
 
 <div id="admission" class="page">
-<h2>অনলাইন ভর্তি আবেদন</h2>
-<input placeholder="শিক্ষার্থীর নাম">
+<h2>🎓 অনলাইন ভর্তি আবেদন</h2>
+<input type="text" placeholder="শিক্ষার্থীর নাম">
 
 <select>
-<option>বিভাগ নির্বাচন করুন</option>
+<option>ক্লাস নির্বাচন করুন</option>
 <option>মক্তব</option>
 <option>নাজেরা</option>
 <option>ইবতেদায়ী</option>
@@ -103,50 +143,28 @@ width:100%;
 <option>মিশকাত</option>
 </select>
 
-<input placeholder="অভিভাবকের মোবাইল">
+<input type="text" placeholder="অভিভাবকের মোবাইল">
 <button class="submit">আবেদন জমা দিন</button>
 </div>
 
-<div id="payment" class="page">
-<h2>পেমেন্ট</h2>
-<p>বিকাশ: ০১৭২৫৩০৪৭১৪</p>
-<input id="trx" placeholder="Transaction ID">
-<button class="submit" onclick="pay()">জমা দিন</button>
-<p id="payMsg"></p>
+<div id="notice" class="page">
+<h2>📢 নোটিশ বোর্ড</h2>
+<p>নতুন শিক্ষাবর্ষের ভর্তি চলছে।</p>
 </div>
 
-<script>
-function showPage(id){
-document.querySelectorAll('.page').forEach(p=>p.style.display='none');
-document.getElementById(id).style.display='block';
-}
+<div id="result" class="page">
+<h2>📄 পরীক্ষার ফলাফল</h2>
+<input type="text" placeholder="রোল নম্বর">
+<button class="submit">ফলাফল দেখুন</button>
+</div>
 
-function registerUser(){
-let mobile=document.getElementById('regMobile').value;
-let pass=document.getElementById('regPass').value;
-localStorage.setItem('mobile',mobile);
-localStorage.setItem('pass',pass);
-alert('রেজিস্ট্রেশন সফল');
-}
+<div id="payment" class="page">
+<h2>💳 অনলাইন পেমেন্ট</h2>
+<p>বিকাশ নম্বর: ০১৭২৫৩০৪৭১৪</p>
 
-function loginUser(){
-let m=document.getElementById('loginMobile').value;
-let p=document.getElementById('loginPass').value;
-
-if(m===localStorage.getItem('mobile') &&
-p===localStorage.getItem('pass')){
-document.getElementById('loginMsg').innerHTML="✅ লগইন সফল";
-}else{
-document.getElementById('loginMsg').innerHTML="❌ ভুল তথ্য";
-}
-}
-
-function pay(){
-let trx=document.getElementById('trx').value;
-document.getElementById('payMsg').innerHTML=
-"✅ পেমেন্ট তথ্য গ্রহণ করা হয়েছে। TRX: "+trx;
-}
-</script>
+<input type="text" placeholder="Transaction ID">
+<button class="submit">জমা দিন</button>
+</div>
 
 </body>
 </html>
