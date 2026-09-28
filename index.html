@@ -456,7 +456,7 @@
             <h3 style="color: #0b6623; margin-bottom: 15px; text-align: center;"><i class="fa-solid fa-user-lock"></i> পোর্টালে লগইন করুন</h3>
             <form onsubmit="handleLogin(event)">
                 <div class="form-group">
-                    <label>মোবাইল নম্বর:</label>
+                    <label>মোবাইল নম্বর:</label> "registion"< রেজিট্রেশন করুন ></রেজিট্রেশন>
                     <input type="tel" id="loginPhone" class="form-control" placeholder="01XXXXXXXXX" required pattern="[0-9]{11}">
                 </div>
                 <div class="form-group">
@@ -516,7 +516,7 @@
                 <div class="form-group">
                     <label>পেমেন্ট মেথড:</label>
                     <select class="form-control" required>
-                        <option>বিকাশ (Bkash - 01725304714/01916655674)</option>
+                        <option>বিকাশ (Bkash - 01725304714)</option>
                         <option>নগদ (Nagad - 01893191383)</option>
                         <option>রকেট (Rocket-01916655674)</option>
                     </select>
@@ -588,10 +588,23 @@
     </footer>
 
     <!-- JavaScript logic -->
-    <script>
-        // Modal functions
-        function openModal(id) {
-            document.getElementById(id).style.display = 'flex';
+    <script> // Modal functions & Auto TrxID Generation
+function generateTrxID() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let trxId = 'TRX-';
+    for (let i = 0; i < 8; i++) {
+        trxId += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    document.getElementById('trxIdInput').value = trxId;
+}
+
+function openModal(id) {
+    if(id === 'paymentModal') {
+        generateTrxID(); // পেমেন্ট বক্স খুললেই অটো ট্রানজেকশন আইডি সেট হবে
+    }
+    document.getElementById(id).style.display = 'flex';
+}
+       
         }
 
         function closeModal(id) {
@@ -610,7 +623,7 @@
             e.preventDefault();
             const phone = document.getElementById('loginPhone').value;
             document.getElementById('userInfo').innerHTML = '<i class="fa-solid fa-user-check"></i> লগইন: ' + phone;
-            document.getElementById('loginNavBtn').innerHTML = '<i class="fa-solid fa-right-from-bracket"></i> লগআউট';
+            document.getElementById('loginNavBtn').innerHTML = '<i class="fa-solid fa-right-from-bracket"></i> লগআউট'; alert("সফলভাবে লগআউট হয়েছে); 
             alert('সফলভাবে লগইন হয়েছে!');
             closeModal('loginModal');
         }
@@ -684,7 +697,7 @@
         // Online Pay
         function submitOnlinePay(e) {
             e.preventDefault();
-            alert('পেমেন্ট ট্রানজেকশন সফলভাবে যাচাইয়ের জন্য পাঠানো হয়েছে। ধন্যবাদ!');
+            alert
             closeModal('paymentModal');
         }
 
