@@ -3,168 +3,273 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ফয়জুন্নেছা ইসলামিয়া মহিলা মাদ্রাসা</title>
+<title>ফয়জুন্নেছা ইসলামিয়া মহিলা মাদরাসা</title>
 
 <style>
+*{box-sizing:border-box}
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f0f5f0;
+    margin:0;
+    font-family:Arial,"Noto Sans Bengali",sans-serif;
+    background:#f5f8f6;
+    color:#222;
 }
-
 header{
-background:linear-gradient(rgba(0,80,40,.8),rgba(0,80,40,.8)),
-url('https://images.unsplash.com/photo-1519817650390-64a93db511aa?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
-color:white;
-text-align:center;
-padding:80px 20px;
+    background:#087443;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
 }
+header h1{margin:0;font-size:30px}
+header p{margin:5px}
 
 nav{
-background:#006400;
-padding:10px;
-text-align:center;
+    background:#075b35;
+    padding:12px;
+    text-align:center;
 }
-
-nav button{
-padding:10px 15px;
-margin:4px;
-border:none;
-border-radius:5px;
-cursor:pointer;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
 }
-
-.page{
-display:none;
-padding:20px;
-background:white;
-margin:15px;
-border-radius:10px;
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    background:#e7f6ed;
 }
-
-.active{
-display:block;
+.hero h2{font-size:34px;color:#075b35}
+.btn,button{
+    background:#087443;
+    color:white;
+    border:0;
+    padding:12px 20px;
+    border-radius:7px;
+    text-decoration:none;
+    cursor:pointer;
 }
-
-input,select{
-width:100%;
-padding:10px;
-margin:5px 0;
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
 }
-
-.submit{
-background:#006400;
-color:white;
-border:none;
-padding:10px;
-width:100%;
-}
-
 .card{
-background:#f7f7f7;
-padding:15px;
-border-radius:10px;
-margin:10px 0;
+    background:white;
+    padding:25px;
+    margin:15px 0;
+    border-radius:10px;
+    box-shadow:0 2px 10px #0001;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+input,select,textarea{
+    width:100%;
+    padding:11px;
+    margin:7px 0 15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+label{font-weight:bold}
+.success{
+    color:#087443;
+    font-weight:bold;
+}
+footer{
+    background:#075b35;
+    color:white;
+    text-align:center;
+    padding:25px;
 }
 </style>
-
-<script>
-function showPage(id){
-document.querySelectorAll('.page').forEach(p=>p.style.display='none');
-document.getElementById(id).style.display='block';
-}
-</script>
-
 </head>
+
 <body>
 
 <header>
-<h1>🕌 ফয়জুন্নেছা ইসলামিয়া মহিলা মাদ্রাসা</h1>
-<p>মধুখালী, ফরিদপুর</p>
-<p>প্রতিষ্ঠাতা পরিচালক: মাওলানা শামসুল হক</p>
-<p>📞 ০১৭২৫৩০৪৭১৪</p>
-<p>📧 mehumahmud@gmail.com</p>
+<h1>ফয়জুন্নেছা ইসলামিয়া মহিলা মাদরাসা</h1>
+<p>কওমী মহিলা মাদরাসা</p>
+<p>পূর্ব গোন্দারদিয়া, মধুখালী, ফরিদপুর</p>
 </header>
 
 <nav>
-<button onclick="showPage('home')">হোম</button>
-<button onclick="showPage('register')">রেজিস্ট্রেশন</button>
-<button onclick="showPage('login')">লগইন</button>
-<button onclick="showPage('admission')">ভর্তি</button>
-<button onclick="showPage('notice')">নোটিশ</button>
-<button onclick="showPage('result')">রেজাল্ট</button>
-<button onclick="showPage('payment')">পেমেন্ট</button>
+<a href="#home">হোম</a>
+<a href="#about">পরিচিতি</a>
+<a href="#department">বিভাগ</a>
+<a href="#admission">অনলাইন ভর্তি</a>
+<a href="#notice">নোটিশ</a>
+<a href="#contact">যোগাযোগ</a>
 </nav>
 
-<div id="home" class="page active">
-<h2>স্বাগতম</h2>
+<div class="hero" id="home">
+<h2>ইলম, আমল ও আদর্শ চরিত্রের শিক্ষা</h2>
+<p>দ্বীনি ও নৈতিক শিক্ষার সুন্দর পরিবেশ</p>
+<a class="btn" href="#admission">অনলাইনে ভর্তি আবেদন</a>
+</div>
 
-<div class="card">📚 মক্তব বিভাগ</div>
-<div class="card">📖 নাজেরা বিভাগ</div>
+<section id="about">
+<h2>মাদরাসা পরিচিতি</h2>
 
 <div class="card">
-🎓 জামাত বিভাগ<br>
-ইবতেদায়ী, মিজান, নাহবেমীর, কুদুরী,
-শরহে বেকায়া, হেদায়া, মিশকাত
+<p><b>নাম:</b> ফয়জুন্নেছা ইসলামিয়া মহিলা মাদরাসা</p>
+<p><b>পরিচালক:</b> মাওঃ শামসুল হক</p>
+<p><b>প্রতিষ্ঠা:</b> ২০২৫</p>
+<p><b>ঠিকানা:</b> পূর্ব গোন্দারদিয়া, মধুখালী, ফরিদপুর</p>
+<p><b>মোবাইল:</b> 01725304714</p>
 </div>
-</div>
+</section>
 
-<div id="register" class="page">
-<h2>👤 রেজিস্ট্রেশন</h2>
-<input type="text" placeholder="নাম">
-<input type="text" placeholder="মোবাইল">
-<input type="password" placeholder="পাসওয়ার্ড">
-<button class="submit">রেজিস্ট্রেশন করুন</button>
-</div>
+<section id="department">
+<h2>শিক্ষা বিভাগ</h2>
 
-<div id="login" class="page">
-<h2>🔐 লগইন</h2>
-<input type="text" placeholder="মোবাইল">
-<input type="password" placeholder="পাসওয়ার্ড">
-<button class="submit">লগইন করুন</button>
+<div class="grid">
+
+<div class="card">
+<h3>মক্তব</h3>
+<p>প্রাথমিক দ্বীনি শিক্ষা</p>
+<a class="btn" href="#admission">ভর্তি</a>
 </div>
 
-<div id="admission" class="page">
-<h2>🎓 অনলাইন ভর্তি আবেদন</h2>
-<input type="text" placeholder="শিক্ষার্থীর নাম">
+<div class="card">
+<h3>নাজেরা</h3>
+<p>কুরআন মাজীদ পড়ার শিক্ষা</p>
+<a class="btn" href="#admission">ভর্তি</a>
+</div>
 
-<select>
-<option>ক্লাস নির্বাচন করুন</option>
+<div class="card">
+<h3>ইবতিদাইয়াহ</h3>
+<a class="btn" href="#admission">ভর্তি</a>
+</div>
+
+<div class="card">
+<h3>মিজান</h3>
+<a class="btn" href="#admission">ভর্তি</a>
+</div>
+
+<div class="card">
+<h3>নাহবেমীর</h3>
+<a class="btn" href="#admission">ভর্তি</a>
+</div>
+
+<div class="card">
+<h3>কুদুরী</h3>
+<a class="btn" href="#admission">ভর্তি</a>
+</div>
+
+<div class="card">
+<h3>শরহে বেকায়া</h3>
+<a class="btn" href="#admission">ভর্তি</a>
+</div>
+
+<div class="card">
+<h3>হেদায়া</h3>
+<a class="btn" href="#admission">ভর্তি</a>
+</div>
+
+<div class="card">
+<h3>মেশকাত</h3>
+<a class="btn" href="#admission">ভর্তি</a>
+</div>
+
+</div>
+</section>
+
+<section id="admission">
+
+<h2>অনলাইন ভর্তি আবেদন</h2>
+
+<div class="card">
+
+<form id="admissionForm">
+
+<label>ছাত্রীর নাম *</label>
+<input type="text" id="studentName" required>
+
+<label>অভিভাবকের নাম *</label>
+<input type="text" id="guardianName" required>
+
+<label>মোবাইল নম্বর *</label>
+<input type="tel" id="mobile" required>
+
+<label>বিভাগ / জামাত *</label>
+
+<select id="className" required>
+<option value="">নির্বাচন করুন</option>
 <option>মক্তব</option>
 <option>নাজেরা</option>
-<option>ইবতেদায়ী</option>
+<option>ইবতিদাইয়াহ</option>
 <option>মিজান</option>
 <option>নাহবেমীর</option>
 <option>কুদুরী</option>
 <option>শরহে বেকায়া</option>
 <option>হেদায়া</option>
-<option>মিশকাত</option>
+<option>মেশকাত</option>
 </select>
 
-<input type="text" placeholder="অভিভাবকের মোবাইল">
-<button class="submit">আবেদন জমা দিন</button>
+<label>ঠিকানা *</label>
+<textarea id="address" rows="4" required></textarea>
+
+<button type="submit">ভর্তি আবেদন জমা দিন</button>
+
+<p id="message"></p>
+
+</form>
+
+</div>
+</section>
+
+<section id="notice">
+
+<h2>নোটিশ</h2>
+
+<div class="card">
+<p>📢 মাদরাসার নতুন নোটিশ এখানে প্রকাশ করা হবে।</p>
+<p>📢 অনলাইন ভর্তি কার্যক্রম চলমান।</p>
 </div>
 
-<div id="notice" class="page">
-<h2>📢 নোটিশ বোর্ড</h2>
-<p>নতুন শিক্ষাবর্ষের ভর্তি চলছে।</p>
+</section>
+
+<section id="contact">
+
+<h2>যোগাযোগ</h2>
+
+<div class="card">
+
+<p><b>পরিচালক:</b> মাওঃ শামসুল হক</p>
+
+<p><b>মোবাইল:</b>
+<a href="tel:01725304714">01725304714</a>
+</p>
+
+<p><b>ঠিকানা:</b>
+পূর্ব গোন্দারদিয়া, মধুখালী, ফরিদপুর
+</p>
+
 </div>
 
-<div id="result" class="page">
-<h2>📄 পরীক্ষার ফলাফল</h2>
-<input type="text" placeholder="রোল নম্বর">
-<button class="submit">ফলাফল দেখুন</button>
-</div>
+</section>
 
-<div id="payment" class="page">
-<h2>💳 অনলাইন পেমেন্ট</h2>
-<p>বিকাশ নম্বর: ০১৭২৫৩০৪৭১৪</p>
+<footer>
 
-<input type="text" placeholder="Transaction ID">
-<button class="submit">জমা দিন</button>
-</div>
+<p>© ২০২৫ ফয়জুন্নেছা ইসলামিয়া মহিলা মাদরাসা</p>
+
+</footer>
+
+<script>
+
+document.getElementById("admissionForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+document.getElementById("message").innerHTML =
+"✅ আপনার ভর্তি আবেদন গ্রহণের জন্য প্রস্তুত হয়েছে। মাদরাসা কর্তৃপক্ষ আপনার সাথে যোগাযোগ করবে।";
+
+this.reset();
+
+});
+
+</script>
 
 </body>
 </html>
