@@ -2,223 +2,151 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ফয়জুন্নেছা ইসলামিয়া মহিলা মাদ্রাসা</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#f5f7f5;
-}
-
-.hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,80,40,.75),rgba(0,80,40,.75)),
-url("https://images.unsplash.com/photo-1512632578888-169bbbc64f33?auto=format&fit=crop&w=1600&q=80");
+body{margin:0;font-family:Arial;background:#f2f5f2}
+header{
+background:linear-gradient(rgba(0,90,40,.8),rgba(0,90,40,.8)),
+url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80');
 background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
 color:white;
-padding:20px;
+text-align:center;
+padding:60px 20px;
 }
-
-.hero-content{
-max-width:900px;
-}
-
-.hero h1{
-font-size:55px;
-margin-bottom:15px;
-}
-
-.hero h2{
-font-size:26px;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:20px;
-line-height:1.8;
-margin-bottom:20px;
-}
-
-.btn{
-display:inline-block;
-padding:12px 25px;
-margin:5px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.btn1{
-background:#FFD700;
-color:black;
-}
-
-.btn2{
-background:white;
-color:#006400;
-}
-
-.menu{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-padding:40px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 0 10px rgba(0,0,0,.1);
+nav{
+background:#006400;
+padding:10px;
 text-align:center;
 }
-
-.card h3{
-color:#006400;
-margin-bottom:10px;
+nav button{
+padding:10px 15px;
+margin:4px;
+border:none;
+border-radius:5px;
+cursor:pointer;
 }
-
-.footer{
+.page{
+display:none;
+padding:20px;
+background:white;
+margin:15px;
+border-radius:10px;
+}
+input,select{
+width:100%;
+padding:10px;
+margin:6px 0;
+}
+.submit{
 background:#006400;
 color:white;
-text-align:center;
-padding:20px;
+border:none;
+padding:10px;
+width:100%;
 }
 </style>
 </head>
+
 <body>
 
-<section class="hero">
-<div class="hero-content">
-
+<header>
 <h1>🕌 ফয়জুন্নেছা ইসলামিয়া মহিলা মাদ্রাসা</h1>
+<p>মধুখালী, ফরিদপুর</p>
+<p>প্রতিষ্ঠাতা পরিচালক: মাওলানা শামসুল হক</p>
+<p>📞 ০১৭২৫৩০৪৭১৪</p>
+</header>
 
-<h2>মধুখালী, ফরিদপুর</h2>
+<nav>
+<button onclick="showPage('home')">হোম</button>
+<button onclick="showPage('register')">রেজিস্ট্রেশন</button>
+<button onclick="showPage('login')">লগইন</button>
+<button onclick="showPage('admission')">ভর্তি</button>
+<button onclick="showPage('payment')">পেমেন্ট</button>
+</nav>
 
-<p>
-কুরআন ও সুন্নাহর আলোকে আদর্শ ইসলামী শিক্ষা প্রতিষ্ঠান
-</p>
-
-<p>
-প্রতিষ্ঠাতা পরিচালক:<br>
-মাওলানা শামসুল হক<br>
-📞 ০১৭২৫৩০৪৭১৪
-</p>
-
-<a href="#" class="btn btn1">🎓 অনলাইন ভর্তি</a>
-<a href="#" class="btn btn2">🔐 লগইন</a>
-
-</div>
-</section>
-
-<section class="menu">
-
-<div class="card">
-<h3>📊 ড্যাশবোর্ড</h3>
-<p>মাদ্রাসার সার্বিক তথ্য</p>
+<div id="home" class="page" style="display:block">
+<h2>স্বাগতম</h2>
+<p>মক্তব, নাজেরা ও জামাত বিভাগে ভর্তি চলছে।</p>
 </div>
 
-<div class="card">
-<h3>🕌 মাদ্রাসার পরিচিতি</h3>
-<p>প্রতিষ্ঠানের ইতিহাস ও লক্ষ্য</p>
+<div id="register" class="page">
+<h2>রেজিস্ট্রেশন</h2>
+<input id="regMobile" placeholder="মোবাইল">
+<input id="regPass" type="password" placeholder="পাসওয়ার্ড">
+<button class="submit" onclick="registerUser()">রেজিস্ট্রেশন করুন</button>
 </div>
 
-<div class="card">
-<h3>👤 রেজিস্ট্রেশন</h3>
-<p>নতুন শিক্ষার্থীর নিবন্ধন</p>
+<div id="login" class="page">
+<h2>লগইন</h2>
+<input id="loginMobile" placeholder="মোবাইল">
+<input id="loginPass" type="password" placeholder="পাসওয়ার্ড">
+<button class="submit" onclick="loginUser()">লগইন করুন</button>
+<p id="loginMsg"></p>
 </div>
 
-<div class="card">
-<h3>🔐 লগইন</h3>
-<p>নিজের একাউন্টে প্রবেশ করুন</p>
+<div id="admission" class="page">
+<h2>অনলাইন ভর্তি আবেদন</h2>
+<input placeholder="শিক্ষার্থীর নাম">
+
+<select>
+<option>বিভাগ নির্বাচন করুন</option>
+<option>মক্তব</option>
+<option>নাজেরা</option>
+<option>ইবতেদায়ী</option>
+<option>মিজান</option>
+<option>নাহবেমীর</option>
+<option>কুদুরী</option>
+<option>শরহে বেকায়া</option>
+<option>হেদায়া</option>
+<option>মিশকাত</option>
+</select>
+
+<input placeholder="অভিভাবকের মোবাইল">
+<button class="submit">আবেদন জমা দিন</button>
 </div>
 
-<div class="card">
-<h3>📝 ভর্তি ফরম</h3>
-<p>অনলাইনে আবেদন করুন</p>
-</div>
-
-<div class="card">
-<h3>📢 নোটিশ বোর্ড</h3>
-<p>সকল গুরুত্বপূর্ণ নোটিশ</p>
-</div>
-
-<div class="card">
-<h3>📄 পরীক্ষার ফলাফল</h3>
-<p>PDF রেজাল্ট ডাউনলোড</p>
-</div>
-
-<div class="card">
-<h3>👨‍🏫 শিক্ষক হাজিরা</h3>
-<p>শিক্ষক-শিক্ষিকার উপস্থিতি</p>
-</div>
-
-<div class="card">
-<h3>📚 বিভাগসমূহ</h3>
-<p>
-মক্তব<br>
-নাজেরা<br>
-জামাত বিভাগ
-</p>
-</div>
-
-<div class="card">
-<h3>📖 জামাত বিভাগ</h3>
-<p>
-ইবতেদায়ী<br>
-মিজান<br>
-নাহবেমীর<br>
-কুদুরী<br>
-শরহে বেকায়া<br>
-হেদায়া<br>
-মিশকাত
-</p>
-</div>
-
-<div class="card">
-<h3>💳 অনলাইন পেমেন্ট</h3>
+<div id="payment" class="page">
+<h2>পেমেন্ট</h2>
 <p>বিকাশ: ০১৭২৫৩০৪৭১৪</p>
+<input id="trx" placeholder="Transaction ID">
+<button class="submit" onclick="pay()">জমা দিন</button>
+<p id="payMsg"></p>
 </div>
 
-<div class="card">
-<h3>📥 ডাউনলোড সেন্টার</h3>
-<p>ফরম, রুটিন ও PDF</p>
-</div>
+<script>
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+document.getElementById(id).style.display='block';
+}
 
-<div class="card">
-<h3>📞 যোগাযোগ</h3>
-<p>
-ইমেইল:<br>
-mehumahmud@gmail.com
-</p>
-</div>
+function registerUser(){
+let mobile=document.getElementById('regMobile').value;
+let pass=document.getElementById('regPass').value;
+localStorage.setItem('mobile',mobile);
+localStorage.setItem('pass',pass);
+alert('রেজিস্ট্রেশন সফল');
+}
 
-<div class="card">
-<h3>📍 ঠিকানা</h3>
-<p>
-মধুখালী, ফরিদপুর
-</p>
-</div>
+function loginUser(){
+let m=document.getElementById('loginMobile').value;
+let p=document.getElementById('loginPass').value;
 
-</section>
+if(m===localStorage.getItem('mobile') &&
+p===localStorage.getItem('pass')){
+document.getElementById('loginMsg').innerHTML="✅ লগইন সফল";
+}else{
+document.getElementById('loginMsg').innerHTML="❌ ভুল তথ্য";
+}
+}
 
-<div class="footer">
-© ২০২৬ ফয়জুন্নেছা ইসলামিয়া মহিলা মাদ্রাসা<br>
-সর্বস্বত্ব সংরক্ষিত
-</div>
+function pay(){
+let trx=document.getElementById('trx').value;
+document.getElementById('payMsg').innerHTML=
+"✅ পেমেন্ট তথ্য গ্রহণ করা হয়েছে। TRX: "+trx;
+}
+</script>
 
 </body>
 </html>
